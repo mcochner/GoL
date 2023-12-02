@@ -1,6 +1,5 @@
 #include "square.h"
 #include "defaultsettings.h"
-#include "board.h"
 #include <QtGui>
 
 

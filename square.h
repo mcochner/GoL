@@ -8,13 +8,13 @@ class Board;
 
 class Square : public QWidget
 {
+Q_OBJECT
 
     int sizeOfSquare;
     int _i;
     int _j;
     bool alive;
     Board *b;
-Q_OBJECT
 
 public:
     explicit Square(QWidget *parent,  int i, int j);

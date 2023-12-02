@@ -1,4 +1,5 @@
 #include <QtGui>
+#include <QGridLayout>
 
 #include "board.h"
 #include "square.h"

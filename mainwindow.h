@@ -8,7 +8,6 @@ class QLabel;
 class Board;
 class QAction;
 class StatusAndControl;
-class About;
 class SimpleGame;
 class Settingsdialog;
 
@@ -41,17 +40,14 @@ private:
     QAction *exitAct;
 
     QAction *settingsAct;
-    QAction *aboutAct;
 
 public:
     SimpleGame *game;
     Board *board;
     StatusAndControl *sac;
-    About *about;
     Settingsdialog *preferences;
 
 public slots:
-   void createAbout();
    void createPreferences();
 
 protected:

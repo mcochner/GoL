@@ -1,15 +1,18 @@
 #include <QtGui>
+#include <QHBoxLayout>
+#include <QMenuBar>
+#include <QMenu>
 #include "simplegame.h"
 #include "mainwindow.h"
 #include "board.h"
 #include "defaultsettings.h"
 #include "statusandcontrol.h"
-#include "about.h"
 #include "settingsdialog.h"
 #include "globalpointers.h"
 
 MainWindow::MainWindow()
 {
+
     GlobalPointers *global = GlobalPointers::getInstance();
 
     sac = new StatusAndControl(this);
@@ -77,7 +80,7 @@ void MainWindow::createMenus()
     settingsMenu->addAction(settingsAct);
 
     helpMenu = menuBar()->addMenu(tr("&Help"));
-    helpMenu->addAction(aboutAct);
+//    helpMenu->addAction(aboutAct);
 }
 
 void MainWindow::createActions() // action is an item that can be added to any number
@@ -99,12 +102,6 @@ void MainWindow::createActions() // action is an item that can be added to any n
     settingsAct->setShortcuts(QKeySequence::Preferences);
     settingsAct->setStatusTip(tr("Configure the application"));
     connect(settingsAct, SIGNAL(triggered()), this, SLOT(createPreferences()));
-
-    aboutAct = new QAction(tr("&About"),this);
-    aboutAct->setStatusTip(tr("Exit the application"));
-    connect(aboutAct, SIGNAL(triggered()), this, SLOT(createAbout()));
-
-
 }
 
 MainWindow::~MainWindow(){
@@ -119,15 +116,7 @@ void MainWindow::createConnections(){
     connect(game, SIGNAL(squaresChanged()), board, SIGNAL(squaresChangedfromGame()));
 }
 
-void MainWindow::createAbout(){
-    //qDebug() << "createAbout";
-    about = new About(this);
-    about->setModal(true);
-    about->show();
-}
-
 void MainWindow::createPreferences(){
-    //qDebug() << "createAbout";
     preferences = new Settingsdialog(this);
     preferences->setModal(true);
     preferences->show();

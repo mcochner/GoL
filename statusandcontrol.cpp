@@ -1,5 +1,6 @@
 #include "statusandcontrol.h"
 #include <QtGui>
+#include <QVBoxLayout>
 #include "globalpointers.h"
 
 StatusAndControl::StatusAndControl(QWidget *parent) :
@@ -15,10 +16,10 @@ StatusAndControl::StatusAndControl(QWidget *parent) :
 
 
     playButton = new QPushButton();
-    playButton->setText(QApplication::tr("&Next"));
+    playButton->setText(tr("&Next"));
 
     play5Button = new QPushButton();
-    play5Button->setText(QApplication::tr("&Next 5"));
+    play5Button->setText(tr("&Next 5"));
 
     QVBoxLayout *rightLayout = new QVBoxLayout(this);
     rightLayout->addSpacing(10);

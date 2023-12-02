@@ -3,8 +3,7 @@
 #include "board.h"
 #include "mainwindow.h"
 
-#include <QtGui/QApplication>
-#include <QSettings>
+#include <QApplication>
 
 int main(int argc, char *argv[])
 {
@@ -16,7 +15,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName(APPLICATION_NAME);
 
     mainWindow.show();
-    a.exec();
+    QApplication::exec();
 
     return 0;
 }
